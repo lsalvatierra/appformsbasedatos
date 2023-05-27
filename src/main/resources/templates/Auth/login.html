@@ -14,19 +14,26 @@
 
 <div class="card ">
     <div class="card-header text-bg-dark mb-3">
-        Lista de Estados Salas
+        Autenticación
     </div>
     <div class="card-body">
-        <div class="mb-3">
-            <label for="txtUsuario" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="txtUsuario" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="txtPassword" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="txtPassword" placeholder="name@example.com">
-        </div>
-        <button type="button" class="btn btn-primary">Primary</button>
-
+        <form th:action="@{/auth/login}" method="post">
+            <div class="mb-3">
+                <label for="nomusuario" class="form-label">Email address</label>
+                <input type="text" class="form-control" id="nomusuario" name="nomusuario" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" id="password" name="password" placeholder="name@example.com">
+            </div>
+            <!--<div class="alert alert-primary" role="alert" th:if="${param.error}">
+                Usuario o password incorrecto.
+            </div>-->
+            <button class="btn btn-md btn-primary" type="submit">Ingresar</button>
+            <button type="button">
+                <a href="/auth/register">Register</a>
+            </button>
+        </form>
     </div>
 </div>
 </body>

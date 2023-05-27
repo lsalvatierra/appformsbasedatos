@@ -1,5 +1,6 @@
 package pe.edu.cibertec.appformsbasedatos.model.bd;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.*;
@@ -38,7 +39,7 @@ public class Usuario {
     @Column(name = "activo")
     private Boolean activo;
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch=FetchType.EAGER)
     @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "idusuario"),
             inverseJoinColumns = @JoinColumn(name = "idrol"))
     private Set<Rol> roles;

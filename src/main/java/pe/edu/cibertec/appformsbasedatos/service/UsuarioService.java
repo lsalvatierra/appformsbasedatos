@@ -1,7 +1,7 @@
 package pe.edu.cibertec.appformsbasedatos.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pe.edu.cibertec.appformsbasedatos.model.bd.Rol;
 import pe.edu.cibertec.appformsbasedatos.model.bd.Usuario;
@@ -13,7 +13,7 @@ import java.util.HashSet;
 
 @Service
 public class UsuarioService {
-/*    @Autowired
+    @Autowired
     private UsuarioRepository userRepository;
     @Autowired
     private RolRepository rolRepository;
@@ -36,6 +36,6 @@ public class UsuarioService {
         Rol userRol = rolRepository.findByNomrol("ADMIN");
         user.setRoles(new HashSet<Rol>(Arrays.asList(userRol)));
         return userRepository.save(user);
-    }*/
+    }
 
 }
